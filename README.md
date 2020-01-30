@@ -10,7 +10,7 @@ All processor standards include a mechanical drawing and a simple I/O connection
 
 ***"Simple Processor Standard"***
 
-17.01.2020 [SPS1](SPS1/)\
+17.01.2020 [SPS1 (revision 1)](SPS1/)\
 <img src="SPS1/images/SPS1.png" alt="SPS1_image" width="300"/>
 
 ## Motherboard standards
@@ -18,9 +18,9 @@ All motherboard standards include a basic and supported processor mechanical dra
 
 ***"Mother Of Motherboard"***
 
-17.01.2020 [MOM1_basic](MOM1/)\
+17.01.2020 [MOM1_basic (revision 1)](MOM1/)\
 <img src="MOM1/images/MOM1_basic.png" alt="MOM1_SPS1_image" width="300"/>\
-17.01.2020 [MOM1_SPS1](MOM1/)\
+17.01.2020 [MOM1_SPS1 (revision 1)](MOM1/)\
 <img src="MOM1/images/MOM1_SPS1.png" alt="MOM1_SPS1_image" width="300"/>
 
 ## Memory standards
