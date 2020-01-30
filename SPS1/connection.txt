@@ -1,0 +1,173 @@
+O==============O
+| Guillaume G. |
+| Revision 1   |
+O==============O
+
+Connector 96 pins
+
+Mechanical reference :
+	Eurocard_5536475-1
+	https://www.te.com/usa-en/product-5536475-1.html
+
+O-----O
+| A1  | BJMPSRC_0			OUT	CMOS
+| A2  | BJMPSRC_1			OUT	CMOS
+| A3  | BJMPSRC_2			OUT	CMOS
+| A4  | BJMPSRC_3			OUT	CMOS
+| A5  | BJMPSRC_4			OUT	CMOS
+| A6  | BJMPSRC_5			OUT	CMOS
+| A7  | BJMPSRC_6			OUT	CMOS
+| A8  | BJMPSRC_7			OUT	CMOS
+| A9  | BJMPSRC_8			OUT	CMOS
+| A10 | BJMPSRC_9			OUT	CMOS
+| A11 | BJMPSRC_10			OUT	CMOS
+| A12 | BJMPSRC_11			OUT	CMOS
+| A13 | BJMPSRC_12			OUT	CMOS
+| A14 | BJMPSRC_13			OUT	CMOS
+| A15 | BJMPSRC_14			OUT	CMOS
+| A16 | BJMPSRC_15			OUT	CMOS
+| A17 | BJMPSRC_16			OUT	CMOS
+| A18 | BJMPSRC_17			OUT	CMOS
+| A19 | BJMPSRC_18			OUT	CMOS
+| A20 | BJMPSRC_19			OUT	CMOS
+| A21 | BJMPSRC_20			OUT	CMOS
+| A22 | BJMPSRC_21			OUT	CMOS
+| A23 | BJMPSRC_22			OUT	CMOS
+| A24 | BJMPSRC_23			OUT	CMOS
+| A25 | PROCESSOR_PAUSE		IN	CMOS
+| A26 | SPI_MOSI			OUT	CMOS
+| A27 | SPI_MISO			IN	TTL
+| A28 | SPI_SCLK			OUT	CMOS
+| A29 | SPI_CS				OUT	CMOS
+| A30 | ~SELECTING_RBEXT1	OUT	CMOS
+| A31 | ~SELECTING_RBEXT2	OUT	CMOS
+| A32 | FEEDBACK			OUT	CMOS
+O-----O
+
+BJMPSRC_*
+	24 bits bus for address jump control.
+
+PROCESSOR_PAUSE
+	pause signal for the processor (active low).
+
+SPI_MOSI
+	master out, slave in, SPI.
+SPI_MISO
+	master in, slave out, SPI.
+SPI_SCLK
+	serial clock, SPI.
+SPI_CS
+	chip select, SPI.
+
+~SELECTING_RBEXT1
+	read bus extern 1 selection (active low).
+~SELECTING_RBEXT2
+	read bus extern 2 selection (active low).
+
+FEEDBACK
+	power feedback (always high).
+
+O-----O
+| B1  | BWRITE1_0			OUT	CMOS
+| B2  | BWRITE1_1			OUT	CMOS
+| B3  | BWRITE1_2			OUT	CMOS
+| B4  | BWRITE1_3			OUT	CMOS
+| B5  | BWRITE1_4			OUT	CMOS
+| B6  | BWRITE1_5			OUT	CMOS
+| B7  | BWRITE1_6			OUT	CMOS
+| B8  | BWRITE1_7			OUT	CMOS
+| B9  | BWRITE2_0			OUT	CMOS
+| B10 | BWRITE2_1			OUT	CMOS
+| B11 | BWRITE2_2			OUT	CMOS
+| B12 | BWRITE2_3			OUT	CMOS
+| B13 | BWRITE2_4			OUT	CMOS
+| B14 | BWRITE2_5			OUT	CMOS
+| B15 | BWRITE2_6			OUT	CMOS
+| B16 | BWRITE2_7			OUT	CMOS
+| B17 | BREAD1_0			IN	TTL
+| B18 | BREAD1_1			IN	TTL
+| B19 | BREAD1_2			IN	TTL
+| B20 | BREAD1_3			IN	TTL
+| B21 | BREAD1_4			IN	TTL
+| B22 | BREAD1_5			IN	TTL
+| B23 | BREAD1_6			IN	TTL
+| B24 | BREAD1_7			IN	TTL
+| B25 | BREAD2_0			IN	TTL
+| B26 | BREAD2_1			IN	TTL
+| B27 | BREAD2_2			IN	TTL
+| B28 | BREAD2_3			IN	TTL
+| B29 | BREAD2_4			IN	TTL
+| B30 | BREAD2_5			IN	TTL
+| B31 | BREAD2_6			IN	TTL
+| B32 | BREAD2_7			IN	TTL
+O-----O
+
+BWRITE1_*
+	8 bits bus for general output pins.
+BWRITE2_*
+	8 bits bus for general output pins.
+
+BREAD1_*
+	8 bits bus for general input pins.
+BREAD2_*
+	8 bits bus for general input pins.
+
+O-----O
+| C1  | NUMBER_0			I/O	CMOS
+| C2  | NUMBER_1			I/O	CMOS
+| C3  | NUMBER_2			I/O	CMOS
+| C4  | NUMBER_3			I/O	CMOS
+| C5  | NUMBER_4			I/O	CMOS
+| C6  | NUMBER_5			I/O	CMOS
+| C7  | NUMBER_6			I/O	CMOS
+| C8  | NUMBER_7			I/O	CMOS
+| C9  | BDATASRC_0			IN	TTL
+| C10 | BDATASRC_1			IN	TTL
+| C11 | BDATASRC_2			IN	TTL
+| C12 | BDATASRC_3			IN	TTL
+| C13 | BDATASRC_4			IN	TTL
+| C14 | BDATASRC_5			IN	TTL
+| C15 | BDATASRC_6			IN	TTL
+| C16 | BDATASRC_7			IN	TTL
+| C17 | ADDSRC_CLK			OUT	CMOS
+| C18 | GLOBAL_CLK			IN	CMOS
+| C19 | RESET_CLK			IN	CMOS
+| C20 | JMPSRC_CLK			OUT	CMOS
+| C21 | PERIPHERAL_CLK		OUT	CMOS
+| C22 | ~COUNTER_RESET		OUT	CMOS
+| C23 | SYNC_BIT			OUT	CMOS
+| C24 | BPCS_0				OUT	CMOS
+| C25 | BPCS_1				OUT	CMOS
+| C26 | BPCS_2				OUT	CMOS
+| C27 | BPCS_3				OUT	CMOS
+| C28 | BPCS_4				OUT	CMOS
+| C29 | BPCS_5				OUT	CMOS
+| C30 | +3.3V				IN	PWR
+| C31 | +5.0V				IN	PWR
+| C32 | GND					IN	PWR
+O-----O
+
+NUMBER_*
+	8 bits bus for number control.
+
+BDATASRC_*
+	8 bits bus for source memory data.
+
+ADDSRC_CLK
+	next address clock for source memory.
+GLOBAL_CLK
+	main clock.
+RESET_CLK
+	reset signal (active high).
+JMPSRC_CLK
+	jumping to address clock for source memory.
+PERIPHERAL_CLK
+	pulse for selected peripheral.
+
+~COUNTER_RESET
+	internal reset of the processor (active low).
+SYNC_BIT
+	synchronization bit is set to high before an instruction execution (active high).
+
+BPCS_*
+	6 bits bus for choosing a peripheral.
