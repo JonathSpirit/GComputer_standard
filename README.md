@@ -1,7 +1,8 @@
 # GComputer_standard
-This repository contains all homemade standard essentially for my 8bits computer but can be applied for any other purpose.
-
 Copyright (C) 2020 Guillaume Guillet
+
+## Description
+This repository contains all homemade standard essentially for my 8bits computer but can be applied for any other purpose.
 
 # Actual standards
 
