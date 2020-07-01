@@ -5,9 +5,9 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "SPS1"
-Date "2020-01-17"
-Rev "model"
-Comp "Guillaume Guillet"
+Date "2020-07-01"
+Rev "model rev2"
+Comp "Name here"
 Comment1 ""
 Comment2 ""
 Comment3 ""
@@ -320,4 +320,48 @@ Text Label 4600 2900 0    60   ~ 0
 FEEDBACK
 Wire Wire Line
 	4950 6500 5800 6500
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5EFCA26A
+P 8150 1200
+F 0 "H1" H 8250 1246 50  0000 L CNN
+F 1 "MountingHole_3mm" H 8250 1155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 8150 1200 50  0001 C CNN
+F 3 "~" H 8150 1200 50  0001 C CNN
+	1    8150 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5EFCB5E1
+P 8150 1600
+F 0 "H3" H 8250 1646 50  0000 L CNN
+F 1 "MountingHole_3mm" H 8250 1555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 8150 1600 50  0001 C CNN
+F 3 "~" H 8150 1600 50  0001 C CNN
+	1    8150 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5EFCBC59
+P 9100 1200
+F 0 "H2" H 9200 1246 50  0000 L CNN
+F 1 "MountingHole_3mm" H 9200 1155 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 9100 1200 50  0001 C CNN
+F 3 "~" H 9100 1200 50  0001 C CNN
+	1    9100 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5EFCC494
+P 9100 1600
+F 0 "H4" H 9200 1646 50  0000 L CNN
+F 1 "MountingHole_3mm" H 9200 1555 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3mm" H 9100 1600 50  0001 C CNN
+F 3 "~" H 9100 1600 50  0001 C CNN
+	1    9100 1600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
