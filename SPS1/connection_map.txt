@@ -1,13 +1,14 @@
 O==============O
 | Guillaume G. |
-| Revision 1   |
+| SPS1 rev2    |
 O==============O
 
-Connector 96 pins
+Connector DIN ABC 96 pins
 
 Mechanical reference :
 	Eurocard_5536475-1
 	https://www.te.com/usa-en/product-5536475-1.html
+
 
 O-----O
 | A1  | BJMPSRC_0			OUT	CMOS
@@ -171,3 +172,39 @@ SYNC_BIT
 
 BPCS_*
 	6 bits bus for choosing a peripheral.
+
+Pins placement :
+O-------------O							(Receptacle)O-------------O
+| C1  B1  A1  |--->								--->| A1  B1  C1  |
+| C2  B2  A2  |										| A2  B2  C2  |
+| C3  B3  A3  |--->								--->| A3  B3  C3  |
+| C4  B4  A4  |										| A4  B4  C4  |
+| C5  B5  A5  |--->								--->| A5  B5  C5  |
+| C6  B6  A6  |										| A6  B6  C6  |
+| C7  B7  A7  |--->								--->| A7  B7  C7  |
+| C8  B8  A8  |										| A8  B8  C8  |
+| C9  B9  A9  |--->								--->| A9  B9  C9  |
+| C10 B10 A10 |										| A10 B10 C10 |
+| C11 B11 A11 |--->								--->| A11 B11 C11 |
+| C12 B12 A12 |										| A12 B12 C12 |
+| C13 B13 A13 |--->								--->| A13 B13 C13 |
+| C14 B14 A14 |										| A14 B14 C14 |
+| C15 B15 A15 |--->								--->| A15 B15 C15 |
+| C16 B16 A16 |										| A16 B16 C16 |
+| C17 B17 A17 |--->								--->| A17 B17 C17 |
+| C18 B18 A18 |										| A18 B18 C18 |
+| C19 B19 A19 |--->								--->| A19 B19 C19 |
+| C20 B20 A20 |										| A20 B20 C20 |
+| C21 B21 A21 |--->								--->| A21 B21 C21 |
+| C22 B22 A22 |										| A22 B22 C22 |
+| C23 B23 A23 |--->								--->| A23 B23 C23 |
+| C24 B24 A24 |										| A24 B24 C24 |
+| C25 B25 A25 |--->								--->| A25 B25 C25 |
+| C26 B26 A26 |										| A26 B26 C26 |
+| C27 B27 A27 |--->								--->| A27 B27 C27 |
+| C28 B28 A28 |										| A28 B28 C28 |
+| C29 B29 A29 |--->								--->| A29 B29 C29 |
+| C30 B30 A30 |										| A30 B30 C30 |
+| C31 B31 A31 |--->								--->| A31 B31 C31 |
+| C32 B32 A32 |										| A32 B32 C32 |
+O-------------O										O-------------O
