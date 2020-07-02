@@ -11,8 +11,9 @@ All processor standards include a mechanical drawing and a simple I/O connection
 
 ***"Simple Processor Standard"***
 
-17.01.2020 [SPS1 (revision 1)](SPS1/)\
-I/O connection map [here](SPS1/connection.txt)\
+01.07.2020 [SPS1 (revision 2)](SPS1/)\
+I/O connection map [here](SPS1/connection_map.txt)\
+Changelog [here](SPS1/CHANGELOG)\
 <img src="SPS1/images/SPS1.png" alt="SPS1_image" width="300"/>
 
 ## Motherboard standards
