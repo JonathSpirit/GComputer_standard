@@ -1,0 +1,60 @@
+CodeG binary revision 1 (txt format)
+
+- OPCODE -
+
+-- INSTRUCTION SELECTION --
+
+OPCODE      HEX     NAME            DESCRIPTION
+xxx0’0000   0x00    BWRITE1_CLK     Apply value to bus “write 1”.
+xxx0’0001   0x01    BWRITE2_CLK     Apply value to bus “write 2”.
+xxx0’0010   0x02    BPCS_CLK        Apply value to bus “peripheral CS”.
+xxx0’0011   0x03    OPLEFT_CLK      Apply value to the left operation.
+xxx0’0100   0x04    OPRIGHT_CLK     Apply value to the right operation.
+xxx0’0101   0x05    OPCHOOSE_CLK    Apply value for choosing the operation.
+xxx0’0110   0x06    PERIPHERAL_CLK  Send a clock pulse to the peripheral.
+xxx0’0111   0x07    BJMPSRC1_CLK    Apply value to bus “jump source 1”.
+xxx0’1000   0x08    BJMPSRC2_CLK    Apply value to bus “jump source 2”.
+xxx0’1001   0x09    BJMPSRC3_CLK    Apply value to bus “jump source 3”.
+xxx0’1010   0x0A    JMPSRC_CLK      Jump to the address of “jump source”.
+xxx0’1011   0x0B    BRAMADD1_CLK    Apply value to bus “RAM address 1”.
+xxx0’1100   0x0C    BRAMADD2_CLK    Apply value to bus “RAM address 2”.
+xxx0’1101   0x0D    SPI_CLK         Send a clock pulse for the SPI.
+xxx0’1110   0x0E    BCFG_SPI_CLK    Apply value to the config bus SPI.
+xxx0’1111   0x0F    STICK           Simple tick, do nothing (delay).
+xxx1’0000   0x10    IF              Conditional instruction.
+xxx1’0001   0x11    IFNOT           Conditional instruction inverted.
+xxx1’0010   0x12    RAMW            Write value to the actual address of the memory.
+xxx1’0011   0x13    UOP             Undefined operation.
+xxx1’0100   0x14    UOP             Undefined operation.
+xxx1’0101   0x15    UOP             Undefined operation.
+xxx1’0110   0x16    UOP             Undefined operation.
+xxx1’0111   0x17    LTICK           Long tick, do nothing (delay).
+
+-- ARGUMENT SELECTION --
+
+OPCODE      HEX     NAME            DESCRIPTION
+000x’xxxx   0x00    SRCVALUE        The value stored to the source.
+001x’xxxx   0x20    BREAD1          The value of the read bus 1.
+010x’xxxx   0x40    BREAD2          The value of the read bus 2.
+011x’xxxx   0x60    OPRESULT        The value of the operation result (ALU).
+100x’xxxx   0x80    RAMVALUE        The value of the processor memory.
+101x’xxxx   0xA0    SPI             The value of the SPI.
+110x’xxxx   0xC0    EXT_1           External value 1.
+111x’xxxx   0xE0    EXT_2           External value 2.
+
+- DESCRIPTION -
+
+CodeG_binary is a homemade simple binary language made for 8bits processor like GP8B*1.
+Every instruction takes two bytes in the memory : The opcode and the source argument.
+
+An opcode is seperated into two parts :
+aaab’bbbb
+a : 3bits to select the arguement.
+b : 5bits to select the instruction.
+
+The source argument is a simple 8bits value that you can choose by putting low the 3 argument selection bits :
+
+OPCODE      HEX     NAME            DESCRIPTION
+000x’xxxx   0x00    SRCVALUE        The value stored to the source.
+
+There is no constraint for the number of clock cycles that take an instruction.
