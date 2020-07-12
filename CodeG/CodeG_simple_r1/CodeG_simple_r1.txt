@@ -1,0 +1,300 @@
+CodeG simple revision 1 (txt format)
+
+- SYNTAX -
+
+Every file must be encoded in ASCII.
+
+The code must be written line by line and each line must end with a line feed (LF).
+All characters between 0 and 31 as well as character 127 in the ASCII table will be ignored during compilation.
+
+Multiple spaces are allowed between keywords, during compilation, extra spaces will be removed.
+
+Each written word represents a type of keyword. There is 7 types of keywords :
+
+KEYWORD TYPE    DESCRIPTION
+target          A [target] is a reserved keyword that identifies a physical peripheral or an operation. The only possibilities are «OP», «OPERATION», «P», «PERIPHERAL».
+bus             A [bus] is a constant decimal number that represents the identifier of a bus.
+value           A [value] can be a [variable], a hexadecimal number, a decimal number, a binary number or any available special arguments.
+name            A [name] represents a word with a special definition like a label name or a macro.
+instruction     An [instruction] represents a reserved keyword having a certain action on the code.
+variable        A [variable] represents a memory location where your value is located. A [variable] is identified with the ‘$’ symbol.
+string          A [string] is an argument to an instruction or an undefined/unknown keyword.
+
+
+- RESERVERD KEYWORDS -
+
+“set”
+“var”
+“label”
+“affect”
+“function”
+“do”
+“if_not”
+“else”
+“end”
+“choose”
+“OP”
+“P”
+“write”
+“if”
+“brut”
+“jump”
+“call”
+“restart”
+“PERIPHERAL”
+“OPERATION”
+“tick”
+“simple”
+“long”
+“repeat”
+“_src”
+“_bread1”
+“_bread2”
+“_result”
+“_ram”
+“_spi”
+“_ext1”
+“_ext2”
+“pool”
+“#”
+“##”
+
+
+- VARIABLE POOL -
+
+A variable pool is a grouping of variables subject to certain rules/constraints.
+
+Pool size :
+You can change the pool size. You cannot insert more variables if the maximum pool size is reached.
+If you specify a size of 0, the size will be dynamically allocated.
+
+Pool address :
+You can change the start address of a pool.
+If no address is specified, the address will be allocated automatically.
+
+The default pool :
+A pool is automatically created by default by the compiler and cannot be configured.
+The size and the address is dynamic.
+The default pool name is “global”.
+
+
+- INSTRUCTIONS -
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+set             set [name] [string]         Define a new macro with a [name] by the content of the [string].
+
+The name must not be a reserved keyword which may send a compilation error.
+
+If the new name has already been defined before, a warning is sent to the user and the compiler replaces the old macro.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+var             var [name] ([name])         Define a new [variable] with a [name].
+
+If the variable already exists, an warning will be sent and if a pool is precised, the pool will be replaced.
+
+The second parameter makes it possible to specify the pool where the variable will be.
+
+If no parameter is entered, the variable will be created in the default pool.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+label           label [name]                Define a new jump label to a position in the code.
+
+If the label already exists, an error will be sent.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+jump            jump [name]                 Jump to a certain label.
+
+If the label does not exist, an error will be sent.
+
+If the label exists, a link will be created to this label. Then the link will be calculated as a fixed address during the link calculation.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+restart         restart                     Jump to the address 0.
+
+Restarts the program by jumping to address 0.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+affect          affect [variable] [value]   Assigns a [variable] to a certain [value].
+
+if the variable does not exist, an error will be sent.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+write           write [bus] [value]         Assigns a [bus] to a certain [value].
+
+if the bus does not exist, an error will be sent.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+choose          choose [target] [value]     Choose a [target] with a certain [value].
+
+-
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+do              do [value] [value] [value]  Do a calcul : opleft operation opright.
+
+-
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+tick            tick [string] ([value])     No effect instruction (delay).
+
+You can choose a «simple» or «long» tick with the first option.
+
+The second argument is the number of times the instruction will be repeated. If no value is set, the instruction will be executed only once. 
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+brut            brut [value], ...           Insert instruction in binary, hexadecimal or decimal form.
+
+A list of constant value can be applied after «brut». Only constant value are authorized.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+jump            jump [name]                 Jump to a label.
+
+Only labels are allowed as [name].
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+function        function [name]             Creates a function with a certain [name].
+
+The [name] should not already be used, an error will be sent if it is the case.
+
+Each function must end with the keyword “end”.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+if              if [value]                  Condition statement.
+
+The code in the condition is executed when the value is other than 0.
+
+The condition is skipped (or the “else” code is executed) when the value is 0.
+
+At the end of the condition, the keyword “else” or “end” must be present.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+else            else                        The “else” tag is used to specify a code to execute when the condition is false.
+
+the “else” tag has to end with “end”.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+if_not          if_not [value]              Inverted condition statement.
+
+The code in the condition is executed when the value is 0.
+
+The condition is skipped (or the “else” code is executed) when the value is other than 0.
+
+At the end of the condition, the keyword “else” or “end” must be present.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+end             end                         End of statement.
+
+The “end” tag is used to indicate the end of a statement.
+
+The “end” tag must be used at the end of a function, condition, loop or other statement.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+call            call [name]                 Call a function.
+
+Jump to a certain function, if the function does not exist, an error occurs.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+repeat          repeat [variable] [value]   Repeat the code.
+
+Repeats the following code according to the argument [value] and a [variable].
+
+The "end" tag has to be at the end.
+
+
+KEYWORD         ARGUMENTS                   DESCRIPTION
+clock           clock [value]               Sends a specified number of pulses to the previously selected peripheral device.
+
+-
+
+
+KEYWORD         ARGUMENTS                       DESCRIPTION
+pool            pool [name] [value] ([value])   Create or modify a pool.
+
+The first value is the [name] of the pool.
+
+The second value is the pool size and must be a constant.
+
+The third value is the start address of the pool and must be a constant.
+
+If the pool already exist it will be replaced with a warning.
+
+
+- ADDRESS LINK -
+
+When affecting a variable, creating a function or jump to a label, the compiler will not directly put the address but will stock a link.
+At the end of the compilation, all links will be translated into actual address.
+This makes it easier to compile.
+
+
+- SPECIAL ARGUMENTS -
+
+Special arguments are [value]s that represent a readable physical source :
+
+KEYWORD     DESCRIPTION
+_src        Return the value sored in the memory source. (this argument is useless and is only there for the sake of understanding.).
+            The returned value will always be ‘0’ and a warning is sent to the user.
+_bread1     Return the value on the readable bus 1.
+_bread2     Return the value on the readable bus 2.
+_result     Return the result of the operation.
+_ram        Return the value stored at the ram.
+_spi        Return the value stored at the spi buffer.
+_ext1       Return the external value 1.
+_ext2       Return the external value 2.
+
+
+- COMMENT -
+
+Comments is ignored by the compiler and must start with a ‘#’.
+For multiline comments, you have to start with “##” and end the multiline comments with the same thing “##”.
+
+
+- EXEMPLE -
+
+Loop exemple (made with notepad++) :
+
+    #ALUminium V1.0 operations
+    set ~ 0x05
+    set <= 0x0F
+    set + 0x00
+
+    set ZERO 0
+
+    var output
+    var index
+
+    affect $index 0
+    affect $output 0
+
+    do $index <= 10         #loop check
+    if _result              #index is smaller than 10
+        do $output ~ ZERO   #inverting all the write bus 1
+        write 1 _result
+        
+        do $index + 1       #index incrementation
+        affect $index _result
+    else                    #end of loop
+        restart             #restart the program
+    end
+
+
+- NOTEPAD++ -
+
+You can find a CodeG_simple.xml file for notepad++ to apply colors.
+
