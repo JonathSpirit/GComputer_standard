@@ -13,13 +13,16 @@ Each written word represents a type of keyword. There is 7 types of keywords :
 
 KEYWORD TYPE    DESCRIPTION
 target          A [target] is a reserved keyword that identifies a physical peripheral or an operation. The only possibilities are «OP», «OPERATION», «P», «PERIPHERAL».
-bus             A [bus] is a constant decimal number that represents the identifier of a bus.
+bus*            A [bus] is a constant decimal number that represents the identifier of a bus. (this will depend on the processor).
 value           A [value] can be a [variable], a hexadecimal number, a decimal number, a binary number or any available special arguments.
 name            A [name] represents a word with a special definition like a label name or a macro.
 instruction     An [instruction] represents a reserved keyword having a certain action on the code.
 variable        A [variable] represents a memory location where your value is located. A [variable] is identified with the ‘$’ symbol.
 string          A [string] is an argument to an instruction or an undefined/unknown keyword.
 
+*Bus 1 always represent the writeable bus 1
+ Bus 2 always represent the writeable bus 2
+ Bus 3 always represent the SPI config bus
 
 - RESERVERD KEYWORDS -
 
@@ -57,7 +60,8 @@ string          A [string] is an argument to an instruction or an undefined/unkn
 “_ext2”
 “pool”
 “#”
-“##”
+“#[”, “]#”
+“SPI”
 
 
 - VARIABLE POOL -
@@ -121,7 +125,7 @@ Restarts the program by jumping to address 0.
 KEYWORD         ARGUMENTS                   DESCRIPTION
 affect          affect [variable] [value]   Assigns a [variable] to a certain [value].
 
-if the variable does not exist, an error will be sent.
+If the variable does not exist, an error will be sent.
 
 
 KEYWORD         ARGUMENTS                   DESCRIPTION
@@ -131,9 +135,9 @@ if the bus does not exist, an error will be sent.
 
 
 KEYWORD         ARGUMENTS                   DESCRIPTION
-choose          choose [target] [value]     Choose a [target] with a certain [value].
+choose          choose [target] [value]     Choose a [target] with an identity [value].
 
--
+Only peripheral or operation are accepted with the [target] argument.
 
 
 KEYWORD         ARGUMENTS                   DESCRIPTION
@@ -183,7 +187,7 @@ At the end of the condition, the keyword “else” or “end” must be present
 KEYWORD         ARGUMENTS                   DESCRIPTION
 else            else                        The “else” tag is used to specify a code to execute when the condition is false.
 
-the “else” tag has to end with “end”.
+The “else” tag has to end with “end”.
 
 
 KEYWORD         ARGUMENTS                   DESCRIPTION
@@ -219,9 +223,9 @@ The "end" tag has to be at the end.
 
 
 KEYWORD         ARGUMENTS                   DESCRIPTION
-clock           clock [value]               Sends a specified number of pulses to the previously selected peripheral device.
+clock           clock [target] ([value])    Sends a specified number of pulses to the [target].
 
--
+The second [value] is the number of pulse you want to make, if no value is present, the instruction will only do 1 pulse.
 
 
 KEYWORD         ARGUMENTS                       DESCRIPTION
@@ -262,7 +266,7 @@ _ext2       Return the external value 2.
 - COMMENT -
 
 Comments is ignored by the compiler and must start with a ‘#’.
-For multiline comments, you have to start with “##” and end the multiline comments with the same thing “##”.
+For multiline comments, you have to start with “#[” and end the multiline comments with “]#”.
 
 
 - EXEMPLE -
@@ -292,6 +296,10 @@ Loop exemple (made with notepad++) :
     else                    #end of loop
         restart             #restart the program
     end
+
+You have to define operations symbols before using it.
+The operation code depend on the ALU on the processor. In this exemple, the operation code is taken from ALUminium V1.0*.
+*https://github.com/JonathSpirit/ALUminium
 
 
 - NOTEPAD++ -
