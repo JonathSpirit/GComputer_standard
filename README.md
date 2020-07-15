@@ -35,3 +35,14 @@ All memory standards include a reference list of connector and a simple I/O conn
 All pheripheral standards include a reference list of connector and a simple I/O connection map.
 
 *WIP*
+
+## CodeG standards
+CodeG is a homemade binary/simple language to be used in a homemage processor like [GP8B](https://github.com/JonathSpirit/GP8B).
+
+***"CodeG_binary"***\
+02.07.2020 [CodeG_binary (revision 1)](CodeG/CodeG_binary_r1/)\
+The binary version is what the processor will read and execute.
+
+***"CodeG_simple"***\
+02.07.2020 [CodeG_simple (revision 1)](CodeG/CodeG_simple_r1/)\
+The simple version allows you to write and read code much more simply but must be compiled to be executed by the processor.
