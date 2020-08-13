@@ -1,0 +1,139 @@
+O==============O
+| Guillaume G. |
+| MM1 rev1     |
+O==============O
+
+
+--- DESCRIPTION ---
+
+ENG: Memory Module 1
+FR : Module Memoire 1
+
+This standard contains an electrical description of the signals, a model for the receptacle and a model for the plug-in PCB.
+The principle is to use PCBs plugged on a SEC II receptacle connector.
+
+The main connector contains the main buses of a parallel memory:
+the control bus (WE, CE, OE), the address bus (16bits), the data bus (8bits) as well as a 5V and 3.3V power supply.
+
+Address extension :
+An optional additional connector can be implemented to increase the memory addressing by 8bits as well as a feedback pin.
+This must be a 2x05_P2.54mm header for flat cable connector.
+
+
+--- MM1 main connector ---
+
+Connector Standard Edge Card (SEC) II, 15 POS 100C/L
+
+Mechanical reference :
+    Eurocard_5530843-2
+    https://www.te.com/usa-en/product-5530843-2.html
+
+
+O----O
+| 1  | GROUND
+| 3  | MEMADDRESS_1         IN  TTL
+| 5  | MEMADDRESS_3         IN  TTL
+| 7  | MEMADDRESS_5         IN  TTL
+| 9  | MEMADDRESS_7         IN  TTL
+| 11 | MEMADDRESS_9         IN  TTL
+| 13 | MEMADDRESS_11        IN  TTL
+| 15 | MEMADDRESS_13        IN  TTL
+| 17 | MEMADDRESS_15        IN  TTL
+| 19 | MEMDATA_1            I/O TTL
+| 21 | MEMDATA_3            I/O TTL
+| 23 | MEMDATA_5            I/O TTL
+| 25 | MEMDATA_7            I/O TTL
+| 27 | MEM_~OE              IN  TTL
+| 29 | +3.3V
+O----O
+
+O----O
+| 2  | MEMADDRESS_0         IN  TTL
+| 4  | MEMADDRESS_2         IN  TTL
+| 6  | MEMADDRESS_4         IN  TTL
+| 8  | MEMADDRESS_6         IN  TTL
+| 10 | MEMADDRESS_8         IN  TTL
+| 12 | MEMADDRESS_10        IN  TTL
+| 14 | MEMADDRESS_12        IN  TTL
+| 16 | MEMADDRESS_14        IN  TTL
+| 18 | MEMDATA_0            I/O TTL
+| 20 | MEMDATA_2            I/O TTL
+| 22 | MEMDATA_4            I/O TTL
+| 24 | MEMDATA_6            I/O TTL
+| 26 | MEM_~WE              IN  TTL
+| 28 | MEM_~CE              IN  TTL
+| 30 | +5.0V
+O----O
+
+
+MEMADDRESS_*
+    16 bits bus for address control.
+
+MEMDATA_*
+    8 bits bidirectional bus for data.
+
+MEM_~OE
+    Output enable control pin (active low).
+MEM_~WE
+    Write enable control pin (active low).
+MEM_~CE
+    Chip enable control pin (active low).
+
+
+Pins placement :
+(Receptacle)                        (Pluggable PCB)
+O-------O                           O-------O
+| 1  2  |<---                   <---| 1  2  |
+| 3  4  |                           | 3  4  |
+| 5  6  |<---                   <---| 5  6  |
+| 7  8  |                           | 7  8  |
+| 9  10 |<---                   <---| 9  10 |
+| 11 12 |                           | 11 12 |
+| 13 14 |<---                   <---| 13 14 |
+| 15 16 |                           | 15 16 |
+| 17 18 |<---                   <---| 17 18 |
+| 19 20 |                           | 19 20 |
+| 21 22 |<---                   <---| 21 22 |
+| 23 24 |                           | 23 24 |
+| 25 26 |<---                   <---| 25 26 |
+| 27 28 |                           | 27 28 |
+| 29 30 |<---                   <---| 29 30 |
+O-------O                           O-------O
+
+
+--- MM1 extra connector ---
+
+O----O
+| 1  | GROUND
+| 3  | MEMADDRESS_17         IN  TTL
+| 5  | MEMADDRESS_19         IN  TTL
+| 7  | MEMADDRESS_21         IN  TTL
+| 9  | MEMADDRESS_23         IN  TTL
+O----O
+
+O----O
+| 2  | MEMADDRESS_16         IN  TTL
+| 4  | MEMADDRESS_18         IN  TTL
+| 6  | MEMADDRESS_20         IN  TTL
+| 8  | MEMADDRESS_22         IN  TTL
+| 10 | MEMFEEDBACK           OUT CMOS
+O----O
+
+
+MEMADDRESS_*
+    8 bits bus for extra address control.
+
+MEMFEEDBACK
+    Feedback pin for memory detection.
+
+
+Pins placement :
+(Receptacle)                        (Receptacle)
+O-------O                           O-------O
+| 1  2  |   flat cable connector    | 1  2  |
+| 3  4  |     <--------------->     | 3  4  |
+| 5  6  |     <--------------->     | 5  6  |
+| 7  8  |     <--------------->     | 7  8  |
+| 9  10 |                           | 9  10 |
+O-------O                           O-------O
+
