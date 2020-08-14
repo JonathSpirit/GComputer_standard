@@ -31,7 +31,7 @@ All memory standards contain documentation with a description, mechanical detail
 
 ***"Memory module"***
 
-13.08.2020 [MM1 (revision 1)](MM1/)\
+13.08.2020 [MM1 (revision 1)](MM1/) , documentation [here](MM1/documentation.txt) , changelog [here](MM1/CHANGELOG)\
 <img src="MM1/images/MM1_PCB_3D.png" alt="MM1_PCB_3D_image" width="300"/> <img src="MM1/images/MM1_PCB.png" alt="MM1_PCB_image" width="300"/>
 
 ## Pheripheral standards
