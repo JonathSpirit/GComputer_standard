@@ -19,6 +19,8 @@ Address extension :
 An optional additional connector can be implemented to increase the memory addressing by 8bits as well as a feedback pin.
 This must be a 2x05_P2.54mm header for flat cable connector.
 
+Please take a look at the models which include all sizes/positions to be respected.
+
 
 --- MM1 main connector ---
 
