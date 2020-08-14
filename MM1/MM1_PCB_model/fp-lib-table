@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name 5530843-2_edge)(type KiCad)(uri ${KIPRJMOD}/libraries/5530843-2_edge.pretty)(options "")(descr ""))
+)
