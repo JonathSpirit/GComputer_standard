@@ -27,9 +27,12 @@ All motherboard standards include a basic and supported processor mechanical dra
 <img src="MOM1/images/MOM1_SPS1.png" alt="MOM1_SPS1_image" width="300"/>
 
 ## Memory standards
-All memory standards include a reference list of connector and a simple I/O connection map.
+All memory standards contain documentation with a description, mechanical detail, electrical detail and pins placement.
 
-*WIP*
+***"Memory module"***
+
+13.08.2020 [MM1 (revision 1)](MM1/) , documentation [here](MM1/documentation.txt) , changelog [here](MM1/CHANGELOG)\
+<img src="MM1/images/MM1_PCB_3D.png" alt="MM1_PCB_3D_image" width="300"/> <img src="MM1/images/MM1_PCB.png" alt="MM1_PCB_image" width="300"/>
 
 ## Pheripheral standards
 All pheripheral standards include a reference list of connector and a simple I/O connection map.
