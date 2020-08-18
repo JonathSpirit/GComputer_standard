@@ -1,10 +1,15 @@
 SPS1 rev1 :
-	- Intial release
-	
+    - Intial release
+
 SPS1 rev2 :
-	- Replace old custom 3mm hole
-	- Add mounting hole into the schematics (H1, H2, H3, H4)
-	- Add CHANGELOG file
-	- Renaming "connection.txt" to "connection_map.txt"
-	- Add pins placement into the connection_map
-	- Add .gitignore for kicad files
+    - Replace old custom 3mm hole
+    - Add mounting hole into the schematics (H1, H2, H3, H4)
+    - Add CHANGELOG file
+    - Renaming "connection.txt" to "connection_map.txt"
+    - Add pins placement into the connection_map
+    - Add .gitignore for kicad files
+
+SPS1 rev3 :
+    - Replace tabs with spaces
+    - Renaming "connection_map.txt" to "documentation.txt"
+    - Adding a description
