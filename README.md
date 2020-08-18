@@ -38,7 +38,7 @@ All pheripheral standards include a reference list of connector and a simple I/O
 *WIP*
 
 ## CodeG standards
-CodeG is a homemade binary/simple language to be used in a homemage processor like [GP8B](https://github.com/JonathSpirit/GP8B).
+CodeG is a homemade binary/simple language to be used in a homemade processor like [GP8B](https://github.com/JonathSpirit/GP8B).
 
 ***"CodeG_binary"***\
 02.07.2020 [CodeG_binary (revision 1)](CodeG/CodeG_binary_r1/)\
