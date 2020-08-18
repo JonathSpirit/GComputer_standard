@@ -7,13 +7,11 @@ This repository contains all homemade standard essentially for my 8bits computer
 # Actual standards
 
 ## Processor standards
-All processor standards include a mechanical drawing and a simple I/O connection map. 
+All processor standards contain documentation with a description, mechanical detail, electrical detail and pins placement.
 
 ***"Simple Processor Standard"***
 
-01.07.2020 [SPS1 (revision 2)](SPS1/)\
-I/O connection map [here](SPS1/connection_map.txt)\
-Changelog [here](SPS1/CHANGELOG)\
+19.08.2020 [SPS1 (revision 3)](SPS1/) , documentation [here](SPS1/documentation.txt) , changelog [here](SPS1/CHANGELOG)\
 <img src="SPS1/images/SPS1.png" alt="SPS1_image" width="300"/>
 
 ## Motherboard standards
@@ -40,7 +38,7 @@ All pheripheral standards include a reference list of connector and a simple I/O
 *WIP*
 
 ## CodeG standards
-CodeG is a homemade binary/simple language to be used in a homemage processor like [GP8B](https://github.com/JonathSpirit/GP8B).
+CodeG is a homemade binary/simple language to be used in a homemade processor like [GP8B](https://github.com/JonathSpirit/GP8B).
 
 ***"CodeG_binary"***\
 02.07.2020 [CodeG_binary (revision 1)](CodeG/CodeG_binary_r1/)\

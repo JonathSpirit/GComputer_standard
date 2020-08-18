@@ -1,0 +1,234 @@
+O==============O
+| Guillaume G. |
+| SPS1 rev3    |
+O==============O
+
+
+--- DESCRIPTION ---
+
+ENG: Simple Processor Standard 1
+FR : Simple Processeur Standard 1
+
+This standard contains an electrical description of the signals and a model for the processor/receptacle connector.
+The principle is to plug board to board using DIN connector.
+
+The main connector contains all the required buses for a simple processor.
+
+Please take a look at the models which include all sizes/positions to be respected.
+
+
+--- SPS1 main connector ---
+
+Connector DIN ABC 96 pins
+
+Mechanical reference :
+    Eurocard_5536475-1
+    https://www.te.com/usa-en/product-5536475-1.html
+
+
+O-----O
+| A1  | BJMPSRC_0           OUT CMOS
+| A2  | BJMPSRC_1           OUT CMOS
+| A3  | BJMPSRC_2           OUT CMOS
+| A4  | BJMPSRC_3           OUT CMOS
+| A5  | BJMPSRC_4           OUT CMOS
+| A6  | BJMPSRC_5           OUT CMOS
+| A7  | BJMPSRC_6           OUT CMOS
+| A8  | BJMPSRC_7           OUT CMOS
+| A9  | BJMPSRC_8           OUT CMOS
+| A10 | BJMPSRC_9           OUT CMOS
+| A11 | BJMPSRC_10          OUT CMOS
+| A12 | BJMPSRC_11          OUT CMOS
+| A13 | BJMPSRC_12          OUT CMOS
+| A14 | BJMPSRC_13          OUT CMOS
+| A15 | BJMPSRC_14          OUT CMOS
+| A16 | BJMPSRC_15          OUT CMOS
+| A17 | BJMPSRC_16          OUT CMOS
+| A18 | BJMPSRC_17          OUT CMOS
+| A19 | BJMPSRC_18          OUT CMOS
+| A20 | BJMPSRC_19          OUT CMOS
+| A21 | BJMPSRC_20          OUT CMOS
+| A22 | BJMPSRC_21          OUT CMOS
+| A23 | BJMPSRC_22          OUT CMOS
+| A24 | BJMPSRC_23          OUT CMOS
+| A25 | PROCESSOR_PAUSE     IN  CMOS
+| A26 | SPI_MOSI            OUT CMOS
+| A27 | SPI_MISO            IN  TTL
+| A28 | SPI_SCLK            OUT CMOS
+| A29 | SPI_CS              OUT CMOS
+| A30 | ~SELECTING_RBEXT1   OUT CMOS
+| A31 | ~SELECTING_RBEXT2   OUT CMOS
+| A32 | FEEDBACK            OUT CMOS
+O-----O
+
+
+BJMPSRC_*
+    24 bits bus for address jump control.
+
+PROCESSOR_PAUSE
+    pause signal for the processor (active low).
+
+SPI_MOSI
+    master out, slave in, SPI.
+SPI_MISO
+    master in, slave out, SPI.
+SPI_SCLK
+    serial clock, SPI.
+SPI_CS
+    chip select, SPI.
+
+~SELECTING_RBEXT1
+    read bus extern 1 selection (active low).
+~SELECTING_RBEXT2
+    read bus extern 2 selection (active low).
+
+FEEDBACK
+    power feedback (always high).
+
+
+O-----O
+| B1  | BWRITE1_0           OUT CMOS
+| B2  | BWRITE1_1           OUT CMOS
+| B3  | BWRITE1_2           OUT CMOS
+| B4  | BWRITE1_3           OUT CMOS
+| B5  | BWRITE1_4           OUT CMOS
+| B6  | BWRITE1_5           OUT CMOS
+| B7  | BWRITE1_6           OUT CMOS
+| B8  | BWRITE1_7           OUT CMOS
+| B9  | BWRITE2_0           OUT CMOS
+| B10 | BWRITE2_1           OUT CMOS
+| B11 | BWRITE2_2           OUT CMOS
+| B12 | BWRITE2_3           OUT CMOS
+| B13 | BWRITE2_4           OUT CMOS
+| B14 | BWRITE2_5           OUT CMOS
+| B15 | BWRITE2_6           OUT CMOS
+| B16 | BWRITE2_7           OUT CMOS
+| B17 | BREAD1_0            IN  TTL
+| B18 | BREAD1_1            IN  TTL
+| B19 | BREAD1_2            IN  TTL
+| B20 | BREAD1_3            IN  TTL
+| B21 | BREAD1_4            IN  TTL
+| B22 | BREAD1_5            IN  TTL
+| B23 | BREAD1_6            IN  TTL
+| B24 | BREAD1_7            IN  TTL
+| B25 | BREAD2_0            IN  TTL
+| B26 | BREAD2_1            IN  TTL
+| B27 | BREAD2_2            IN  TTL
+| B28 | BREAD2_3            IN  TTL
+| B29 | BREAD2_4            IN  TTL
+| B30 | BREAD2_5            IN  TTL
+| B31 | BREAD2_6            IN  TTL
+| B32 | BREAD2_7            IN  TTL
+O-----O
+
+
+BWRITE1_*
+    8 bits bus for general output pins.
+BWRITE2_*
+    8 bits bus for general output pins.
+
+BREAD1_*
+    8 bits bus for general input pins.
+BREAD2_*
+    8 bits bus for general input pins.
+
+
+O-----O
+| C1  | NUMBER_0            I/O CMOS
+| C2  | NUMBER_1            I/O CMOS
+| C3  | NUMBER_2            I/O CMOS
+| C4  | NUMBER_3            I/O CMOS
+| C5  | NUMBER_4            I/O CMOS
+| C6  | NUMBER_5            I/O CMOS
+| C7  | NUMBER_6            I/O CMOS
+| C8  | NUMBER_7            I/O CMOS
+| C9  | BDATASRC_0          IN  TTL
+| C10 | BDATASRC_1          IN  TTL
+| C11 | BDATASRC_2          IN  TTL
+| C12 | BDATASRC_3          IN  TTL
+| C13 | BDATASRC_4          IN  TTL
+| C14 | BDATASRC_5          IN  TTL
+| C15 | BDATASRC_6          IN  TTL
+| C16 | BDATASRC_7          IN  TTL
+| C17 | ADDSRC_CLK          OUT CMOS
+| C18 | GLOBAL_CLK          IN  CMOS
+| C19 | RESET_CLK           IN  CMOS
+| C20 | JMPSRC_CLK          OUT CMOS
+| C21 | PERIPHERAL_CLK      OUT CMOS
+| C22 | ~COUNTER_RESET      OUT CMOS
+| C23 | SYNC_BIT            OUT CMOS
+| C24 | BPCS_0              OUT CMOS
+| C25 | BPCS_1              OUT CMOS
+| C26 | BPCS_2              OUT CMOS
+| C27 | BPCS_3              OUT CMOS
+| C28 | BPCS_4              OUT CMOS
+| C29 | BPCS_5              OUT CMOS
+| C30 | +3.3V               IN  PWR
+| C31 | +5.0V               IN  PWR
+| C32 | GND                 IN  PWR
+O-----O
+
+
+NUMBER_*
+    8 bits bus for number control.
+
+BDATASRC_*
+    8 bits bus for source memory data.
+
+ADDSRC_CLK
+    next address clock for source memory.
+GLOBAL_CLK
+    main clock.
+RESET_CLK
+    reset signal (active high).
+JMPSRC_CLK
+    jumping to address clock for source memory.
+PERIPHERAL_CLK
+    pulse for selected peripheral.
+
+~COUNTER_RESET
+    internal reset of the processor (active low).
+SYNC_BIT
+    synchronization bit is set to high before an instruction execution (active high).
+
+BPCS_*
+    6 bits bus for choosing a peripheral.
+
+
+Pins placement :
+(Processor connector)                               (Motherboard receptacle)
+O-------------O                                     O-------------O
+| C1  B1  A1  |--->                             --->| A1  B1  C1  |
+| C2  B2  A2  |                                     | A2  B2  C2  |
+| C3  B3  A3  |--->                             --->| A3  B3  C3  |
+| C4  B4  A4  |                                     | A4  B4  C4  |
+| C5  B5  A5  |--->                             --->| A5  B5  C5  |
+| C6  B6  A6  |                                     | A6  B6  C6  |
+| C7  B7  A7  |--->                             --->| A7  B7  C7  |
+| C8  B8  A8  |                                     | A8  B8  C8  |
+| C9  B9  A9  |--->                             --->| A9  B9  C9  |
+| C10 B10 A10 |                                     | A10 B10 C10 |
+| C11 B11 A11 |--->                             --->| A11 B11 C11 |
+| C12 B12 A12 |                                     | A12 B12 C12 |
+| C13 B13 A13 |--->                             --->| A13 B13 C13 |
+| C14 B14 A14 |                                     | A14 B14 C14 |
+| C15 B15 A15 |--->                             --->| A15 B15 C15 |
+| C16 B16 A16 |                                     | A16 B16 C16 |
+| C17 B17 A17 |--->                             --->| A17 B17 C17 |
+| C18 B18 A18 |                                     | A18 B18 C18 |
+| C19 B19 A19 |--->                             --->| A19 B19 C19 |
+| C20 B20 A20 |                                     | A20 B20 C20 |
+| C21 B21 A21 |--->                             --->| A21 B21 C21 |
+| C22 B22 A22 |                                     | A22 B22 C22 |
+| C23 B23 A23 |--->                             --->| A23 B23 C23 |
+| C24 B24 A24 |                                     | A24 B24 C24 |
+| C25 B25 A25 |--->                             --->| A25 B25 C25 |
+| C26 B26 A26 |                                     | A26 B26 C26 |
+| C27 B27 A27 |--->                             --->| A27 B27 C27 |
+| C28 B28 A28 |                                     | A28 B28 C28 |
+| C29 B29 A29 |--->                             --->| A29 B29 C29 |
+| C30 B30 A30 |                                     | A30 B30 C30 |
+| C31 B31 A31 |--->                             --->| A31 B31 C31 |
+| C32 B32 A32 |                                     | A32 B32 C32 |
+O-------------O                                     O-------------O
+
