@@ -1,0 +1,125 @@
+O==============O
+| Guillaume G. |
+| PP1 rev1     |
+O==============O
+
+
+--- DESCRIPTION ---
+
+ENG: Parallel Peripheral 1
+FR : Périphérique Parallèle 1
+
+This standard contains an electrical description of the signals, a model for the receptacle and a model for the plug-in PCB.
+The principle is to use PCBs plugged on a SEC II receptacle connector.
+
+The main connector contains the main buses of a parallel peripheral:
+Communication bus (2 writeable buses and 2 readable buses), module controls (CLK_MODULE, ~CS_MODULE), optional controls (SYNC_BIT, ~RESET_CLK, PERIPHERAL_CLK)
+as well as a 5V and 3.3V power supply.
+
+Please take a look at the models which include all sizes/positions to be respected.
+
+
+--- PP1 main connector ---
+
+Connector Standard Edge Card (SEC) II, 20 POS 100C/L
+
+Mechanical reference :
+    Board-to-Board 5-5530843-4
+    https://www.te.com/usa-en/product-5-5530843-4.html
+
+
+O----O
+| 1  | GROUND
+| 3  | PERIPHERAL_CLK       IN  CMOS
+| 5  | ~RESET_CLK           IN  CMOS
+| 7  | BREAD2_7             OUT TTL
+| 9  | BREAD2_6             OUT TTL
+| 11 | BREAD2_5             OUT TTL
+| 13 | BREAD2_4             OUT TTL
+| 15 | BREAD2_3             OUT TTL
+| 17 | BREAD2_2             OUT TTL
+| 19 | BREAD2_1             OUT TTL
+| 21 | BREAD2_0             OUT TTL
+| 23 | BREAD1_7             OUT TTL
+| 25 | BREAD1_6             OUT TTL
+| 27 | BREAD1_5             OUT TTL
+| 29 | BREAD1_4             OUT TTL
+| 31 | BREAD1_3             OUT TTL
+| 33 | BREAD1_2             OUT TTL
+| 35 | BREAD1_1             OUT TTL
+| 37 | BREAD1_0             OUT TTL
+| 39 | +3.3V
+O----O
+
+O----O
+| 2  | ~CS_MODULE           IN CMOS
+| 4  | CLK_MODULE           IN CMOS
+| 6  | SYNC_BIT             IN CMOS
+| 8  | BWRITE2_7            IN CMOS
+| 10 | BWRITE2_6            IN CMOS
+| 12 | BWRITE2_5            IN CMOS
+| 14 | BWRITE2_4            IN CMOS
+| 16 | BWRITE2_3            IN CMOS
+| 18 | BWRITE2_2            IN CMOS
+| 20 | BWRITE2_1            IN CMOS
+| 22 | BWRITE2_0            IN CMOS
+| 24 | BWRITE1_7            IN CMOS
+| 26 | BWRITE1_6            IN CMOS
+| 28 | BWRITE1_5            IN CMOS
+| 30 | BWRITE1_4            IN CMOS
+| 32 | BWRITE1_3            IN CMOS
+| 34 | BWRITE1_2            IN CMOS
+| 36 | BWRITE1_1            IN CMOS
+| 38 | BWRITE1_0            IN CMOS
+| 40 | +5.0V
+O----O
+
+
+BWRITE1_*
+    8 bits bus for writeable communication.
+BWRITE2_*
+    8 bits bus for writeable communication.
+
+BREAD1_*
+    8 bits bus for readable communication.
+BREAD2_*
+    8 bits bus for readable communication.
+
+~CS_MODULE
+    Peripheral chip select, (active low), when inactive, you must put in high-impedance BREAD* buses.
+CLK_MODULE
+    Peripheral pulse sended by the processor.
+
+PERIPHERAL_CLK
+    50Mhz maximum frequency, sended by the motherboard.
+SYNC_BIT
+    Sync bit pulse from the processor.
+~RESET_CLK
+    Reset signal sended by the motherboard, (active low).
+
+
+Pins placement :
+(Receptacle)                        (Pluggable PCB)
+O-------O                           O-------O
+| 1  2  |<---                   <---| 1  2  |
+| 3  4  |                           | 3  4  |
+| 5  6  |<---                   <---| 5  6  |
+| 7  8  |                           | 7  8  |
+| 9  10 |<---                   <---| 9  10 |
+| 11 12 |                           | 11 12 |
+| 13 14 |<---                   <---| 13 14 |
+| 15 16 |                           | 15 16 |
+| 17 18 |<---                   <---| 17 18 |
+| 19 20 |                           | 19 20 |
+| 21 22 |<---                   <---| 21 22 |
+| 23 24 |                           | 23 24 |
+| 25 26 |<---                   <---| 25 26 |
+| 27 28 |                           | 27 28 |
+| 29 30 |<---                   <---| 29 30 |
+| 31 32 |                           | 31 32 |
+| 33 34 |<---                   <---| 33 34 |
+| 35 36 |                           | 35 36 |
+| 37 38 |<---                   <---| 37 38 |
+| 39 40 |                           | 39 40 |
+O-------O                           O-------O
+

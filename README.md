@@ -33,9 +33,12 @@ All memory standards contain documentation with a description, mechanical detail
 <img src="MM1/images/MM1_PCB_3D.png" alt="MM1_PCB_3D_image" width="300"/> <img src="MM1/images/MM1_PCB.png" alt="MM1_PCB_image" width="300"/>
 
 ## Pheripheral standards
-All pheripheral standards include a reference list of connector and a simple I/O connection map.
+All pheripheral standards contain documentation with a description, mechanical detail, electrical detail and pins placement.
 
-*WIP*
+***"Parallel peripheral"***
+
+24.09.2020 [PP1 (revision 1)](PP1/) , documentation [here](PP1/documentation.txt) , changelog [here](PP1/CHANGELOG)\
+<img src="PP1/images/PP1_PCB_3D.png" alt="PP1_PCB_3D_image" width="300"/> <img src="PP1/images/PP1_PCB.png" alt="PP1_PCB_image" width="300"/>
 
 ## CodeG standards
 CodeG is a homemade binary/simple language to be used in a homemade processor like [GP8B](https://github.com/JonathSpirit/GP8B).

@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name TE_5-5530843-4_edge)(type KiCad)(uri ${KIPRJMOD}/libraries/TE_5-5530843-4_edge.pretty)(options "")(descr ""))
+)
