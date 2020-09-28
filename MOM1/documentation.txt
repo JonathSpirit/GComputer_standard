@@ -1,0 +1,86 @@
+O==============O
+| Guillaume G. |
+| MOM1 rev2    |
+O==============O
+
+
+--- DESCRIPTION ---
+
+ENG: Mother Of Motherboards 1
+FR : Mère des carte-mères 1
+
+This standard contains a basic definition of a motherboard without reference to a processor standard as well as a definition list of compatible processor standards.
+
+For definitions containing a processor or/and others standard, a link to its documentation will be provided. 
+
+Please take a look at the models which include all sizes/positions to be respected.
+
+
+--- MOM1 basic ---
+
+This is the basic definition of the MOM1 standard (without a processor).
+
+The size of the board x:203.0mm y:116.0mm must be respected (please see the Kicad basic model).
+
+You can implement a total of 4 peripheral connectors following the PP1* standard.
+
+Each of the peripheral connectors have their positions fixed on the board.
+You can decide not to implement one of the 4 or more connectors but you must respect the positions.
+
+A fifth or more connectors on the board is outside the definition of this standard and it is up to you to anticipate/correct any problems this may cause.
+
+There is no other constraint to be respected apart from the 4 3mm fixing holes.
+
+
+*https://github.com/JonathSpirit/GComputer_standard/tree/master/PP1
+
+
+--- MOM1 SPS1 ---
+
+This is the definition of the MOM1 standard with an SPS1 processor.
+
+For electrical and pins data please see the SPS1* documentation :
+*https://github.com/JonathSpirit/GComputer_standard/tree/master/SPS1
+
+
+Mechanical reference :
+    Eurocard 5536475-1
+    https://www.te.com/usa-en/product-5536475-1.html
+
+Pins placement :
+(Processor connector)                               (Motherboard receptacle)
+O-------------O                                     O-------------O
+| C1  B1  A1  |--->                             --->| A1  B1  C1  |
+| C2  B2  A2  |                                     | A2  B2  C2  |
+| C3  B3  A3  |--->                             --->| A3  B3  C3  |
+| C4  B4  A4  |                                     | A4  B4  C4  |
+| C5  B5  A5  |--->                             --->| A5  B5  C5  |
+| C6  B6  A6  |                                     | A6  B6  C6  |
+| C7  B7  A7  |--->                             --->| A7  B7  C7  |
+| C8  B8  A8  |                                     | A8  B8  C8  |
+| C9  B9  A9  |--->                             --->| A9  B9  C9  |
+| C10 B10 A10 |                                     | A10 B10 C10 |
+| C11 B11 A11 |--->                             --->| A11 B11 C11 |
+| C12 B12 A12 |                                     | A12 B12 C12 |
+| C13 B13 A13 |--->                             --->| A13 B13 C13 |
+| C14 B14 A14 |                                     | A14 B14 C14 |
+| C15 B15 A15 |--->                             --->| A15 B15 C15 |
+| C16 B16 A16 |                                     | A16 B16 C16 |
+| C17 B17 A17 |--->                             --->| A17 B17 C17 |
+| C18 B18 A18 |                                     | A18 B18 C18 |
+| C19 B19 A19 |--->                             --->| A19 B19 C19 |
+| C20 B20 A20 |                                     | A20 B20 C20 |
+| C21 B21 A21 |--->                             --->| A21 B21 C21 |
+| C22 B22 A22 |                                     | A22 B22 C22 |
+| C23 B23 A23 |--->                             --->| A23 B23 C23 |
+| C24 B24 A24 |                                     | A24 B24 C24 |
+| C25 B25 A25 |--->                             --->| A25 B25 C25 |
+| C26 B26 A26 |                                     | A26 B26 C26 |
+| C27 B27 A27 |--->                             --->| A27 B27 C27 |
+| C28 B28 A28 |                                     | A28 B28 C28 |
+| C29 B29 A29 |--->                             --->| A29 B29 C29 |
+| C30 B30 A30 |                                     | A30 B30 C30 |
+| C31 B31 A31 |--->                             --->| A31 B31 C31 |
+| C32 B32 A32 |                                     | A32 B32 C32 |
+O-------------O                                     O-------------O
+

@@ -15,13 +15,13 @@ All processor standards contain documentation with a description, mechanical det
 <img src="SPS1/images/SPS1.png" alt="SPS1_image" width="300"/>
 
 ## Motherboard standards
-All motherboard standards include a basic and supported processor mechanical drawings. 
+All motherboard standards contain documentation with a description and every model with compatible processor.
 
 ***"Mother Of Motherboard"***
 
-17.01.2020 [MOM1_basic (revision 1)](MOM1/)\
+28.09.2020 [MOM1_basic (revision 2)](MOM1/) , documentation [here](MOM1/documentation.txt) , changelog [here](MOM1/CHANGELOG)\
 <img src="MOM1/images/MOM1_basic.png" alt="MOM1_SPS1_image" width="300"/>\
-17.01.2020 [MOM1_SPS1 (revision 1)](MOM1/)\
+28.09.2020 [MOM1_SPS1 (revision 2)](MOM1/) , documentation [here](MOM1/documentation.txt) , changelog [here](MOM1/CHANGELOG)\
 <img src="MOM1/images/MOM1_SPS1.png" alt="MOM1_SPS1_image" width="300"/>
 
 ## Memory standards

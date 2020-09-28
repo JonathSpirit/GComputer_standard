@@ -1,0 +1,20 @@
+MOM1 rev1 :
+    - Intial release
+
+MOM1 rev2 :
+    - Adding an 's' on "Motherboard"
+    - Add CHANGELOG file
+    - Add documentation file
+    - Set the rev2 date (28.09.2020)
+    - Set "model rev2" for revision
+    - Apply the new compatible PP1 standard
+    - Renaming "5-5530843-4" to "PP1_connector_TE_5-5530843-4"
+    - Renaming "GLOBAL_CLK" to "PERIPHERAL_CLK" like the PP1_rev1 standard
+    - Removing useless libraries, 3D and cleaning
+    - Add mounting holes (H1, H2, H3, H4)
+    - Putting "Name here" instead of "Guillaume Guillet"
+    - Schematics: Set the text to "(optional) PP1_rev1 pheripheral connectors"
+    - Regenerate images
+    - Fix 3D model for SPS1 connector
+    - Add a .gitignore file and apply it
+
